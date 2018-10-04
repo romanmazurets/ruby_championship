@@ -1,5 +1,5 @@
 class FileParser
-  def test_me
+  def self.test_me
     'works'
   end
 end
