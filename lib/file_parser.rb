@@ -1,3 +1,5 @@
+require_relative './game'
+
 class FileParser
   def self.parse(path_to_file)
     File.readlines(path_to_file).map do |line|
@@ -5,3 +7,4 @@ class FileParser
     end
   end
 end
+

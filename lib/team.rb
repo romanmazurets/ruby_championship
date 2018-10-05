@@ -11,7 +11,7 @@ class Team
   end
 
   def <=>(other)
-    self.goals <=> other.goals
+    goals <=> other.goals
   end
 end
 
