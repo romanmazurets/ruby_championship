@@ -11,5 +11,5 @@ task default: :test
 
 desc 'Application'
 task :run do
-  puts FileParser.test_me
+  puts 'Hola!'
 end
