@@ -9,17 +9,21 @@ describe Game do
   end
 
   describe '.build_teams' do
-    it 'returns array of two teams' do
-      subject = @game.send(:build_teams, @line)
-      subject.must_equal [Team.new('Barcelona',1), Team.new('Arsenal', 0)]
+    it 'assigns guest and host' do
+      @game.host.name.must_equal 'Barcelona'
+      @game.host.goals.must_equal 1
+      @game.guest.name.must_equal 'Arsenal'
+      @game.guest.goals.must_equal 0
     end
   end
 
   describe '.play' do
     it 'returns teams with scores' do
       subject = @game.play
-      subject.must_equal [Team.new('Barcelona', 1, 3), Team.new('Arsenal', 0, 0)]
+      subject.first.score.must_equal 3
+      subject.last.score.must_equal 0
     end
   end
 end
+
 

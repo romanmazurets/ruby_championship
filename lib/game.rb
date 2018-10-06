@@ -26,7 +26,7 @@ class Game
 
   def build_teams(line)
     @host, @guest = line.split(',').map do |team_line|
-      new_team team_line
+      new_team team_line.strip
     end
   end
 
