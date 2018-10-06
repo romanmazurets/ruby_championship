@@ -3,11 +3,10 @@ require 'minitest/autorun'
 
 describe FileParser do
   describe '#parse' do
-    before { @file_parser = FileParser.parse('sample-input.txt') }
-
-    # it 'returns Array' do
-    #   @file_parser.must_be_instance_of Array
-    # end
+    it 'returns Array of teams' do
+      subject = FileParser.parse('sample-input.txt')
+      subject.must_be_instance_of Array
+      subject.flatten.first.must_be_instance_of Team
+    end
   end
 end
-
