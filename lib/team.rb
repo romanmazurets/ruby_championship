@@ -1,3 +1,5 @@
+require 'active_support/inflector'
+
 class Team
   include Comparable
 
@@ -12,6 +14,10 @@ class Team
 
   def <=>(other)
     goals <=> other.goals
+  end
+
+  def to_s
+    "#{name}, #{score} #{'pt'.pluralize(score)}"
   end
 end
 
