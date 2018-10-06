@@ -3,8 +3,8 @@ require 'active_support/inflector'
 class Team
   include Comparable
 
-  attr_reader :name, :goals
-  attr_accessor :score
+  attr_reader :name
+  attr_accessor :score, :goals
 
   def initialize(name, goals, score = nil)
     @name = name

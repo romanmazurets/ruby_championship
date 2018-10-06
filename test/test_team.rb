@@ -15,8 +15,8 @@ describe Team do
 
   describe 'to_s' do
     it 'return name and points' do
-      @host.to_s.must_match /Barcelona, 3 pts/
-      Team.new('Inter', 0, 1).to_s.must_match /Inter, 1 pt/
+      @host.to_s.must_match 'Barcelona, 3 pts'
+      Team.new('Inter', 0, 1).to_s.must_match 'Inter, 1 pt'
     end
   end
 end
