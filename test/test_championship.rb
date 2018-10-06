@@ -20,4 +20,15 @@ describe Championship do
       @championship.send(:sum_score, 'Grouches').must_equal 0
     end
   end
+
+  describe '.table' do
+    it 'returns sorted by scores array of teams' do
+      subject = @championship.table
+      subject[0].name.must_equal 'Tarantulas'
+      subject[1].name.must_equal 'Lions'
+      subject[2].name.must_equal 'FC Awesome'
+      subject[3].name.must_equal 'Snakes'
+      subject[4].name.must_equal 'Grouches'
+    end
+  end
 end

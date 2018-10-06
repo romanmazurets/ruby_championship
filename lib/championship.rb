@@ -9,12 +9,21 @@ class Championship
   end
 
   def table
-
+    teams
+      .clone
+      .uniq(&:name)
+      .sort_by(&:name)
+      .each { |team| team.score = sum_score(team.name) }
+      .sort_by(&:score)
+      .reverse
   end
 
   private
 
   def sum_score(team_name)
-    @teams.select { |team| team.name.include? team_name }.map(&:score).sum
+    teams
+      .select { |team| team.name.include? team_name }
+      .map(&:score)
+      .sum
   end
 end
