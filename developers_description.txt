@@ -1,0 +1,4 @@
+1. bundle install
+2. rake - for run tests
+3. rake run  - for run application with default input file
+4. rake run['path_to_file'] - for run application with custom input file
