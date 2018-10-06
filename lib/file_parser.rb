@@ -7,4 +7,3 @@ class FileParser
     end
   end
 end
-

@@ -10,6 +10,13 @@ desc 'Run test'
 task default: :test
 
 desc 'Application'
-task :run do
-  puts 'Hola!'
+task :run, ['path_to_file'] do |t, args|
+  file = args.path_to_file || 'sample-input.txt'
+
+  unless File.file? file
+    puts 'ERROR: Wrong path to file'
+    next
+  end
+
+  puts Championship.new(file).to_s
 end

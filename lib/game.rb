@@ -26,14 +26,15 @@ class Game
 
   def build_teams(line)
     @host, @guest = line.split(',').map do |team_line|
-      new_team team_line
+      new_team team_line.strip
     end
   end
 
   def new_team(line)
-    # team = 'Barcelona 1'
-    name, goals = line.split(' ')
-    Team.new(name, goals)
+    last_whitespace = line.rindex(' ')
+    name = line[0..last_whitespace-1]
+    goals = line[last_whitespace+1..line.size]
+    Team.new(name, goals.to_i)
   end
 end
 
