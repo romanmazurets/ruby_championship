@@ -31,8 +31,9 @@ class Game
   end
 
   def new_team(line)
-    # team = 'Barcelona 1'
-    name, goals = line.split(' ')
+    last_whitespace = line.rindex(' ')
+    name = line[0..last_whitespace-1]
+    goals = line[last_whitespace+1..line.size]
     Team.new(name, goals.to_i)
   end
 end
