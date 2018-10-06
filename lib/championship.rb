@@ -18,6 +18,12 @@ class Championship
       .reverse
   end
 
+  def to_s
+    table
+      .map.with_index(1) { |team, index| "#{index}. #{team}" }
+      .join("\n")
+  end
+
   private
 
   def sum_score(team_name)
