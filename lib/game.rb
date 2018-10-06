@@ -33,7 +33,7 @@ class Game
   def new_team(line)
     # team = 'Barcelona 1'
     name, goals = line.split(' ')
-    Team.new(name, goals)
+    Team.new(name, goals.to_i)
   end
 end
 
